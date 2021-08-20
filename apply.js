@@ -104,6 +104,7 @@ module.exports = function (ctx) {
         onFatalException(e);
         throw e;
     }
+    if (!ctx.opts.platforms.includes('android')) return deferral.promise;
     attempt(run)();
     return deferral.promise;
 };
